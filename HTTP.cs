@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections.Concurrent;
 
 namespace OPG.Signage.APIServer
 {
@@ -6,7 +6,7 @@ namespace OPG.Signage.APIServer
 	{
 		public static string GetStatusCode(string codeIn)
 		{
-			Dictionary<string, string> Statuscodes = new Dictionary<string, string>()
+            ConcurrentDictionary<string, string> Statuscodes = new ConcurrentDictionary<string, string>()
 			{
 				["200"] = "OK",
 				["400"] = "Bad Request",

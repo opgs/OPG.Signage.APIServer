@@ -45,7 +45,8 @@ namespace OPG.Signage.APIServer
 				{
 					buildb.Append(_headers[counter]);
 				}
-				return buildb.ToString() + (IsPersistent ? "\r\n" : "Connection: close\r\n\r\n");
+                buildb.Append(IsPersistent ? "\r\n" : "Connection: close\r\n\r\n");
+                return buildb.ToString();
 			}
 			set
 			{
@@ -70,7 +71,6 @@ namespace OPG.Signage.APIServer
 
 		public HTTPReply()
 		{
-
 		}
 
 		public HTTPReply(HttpVersion versionIn)
